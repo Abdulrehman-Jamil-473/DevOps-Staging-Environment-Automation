@@ -1,0 +1,10 @@
+---
+- name: Start staging Docker container
+  hosts: staging
+  become: true
+
+  tasks:
+    - name: Start staging-app container
+      community.docker.docker_container:
+        name: staging-app
+        state: started

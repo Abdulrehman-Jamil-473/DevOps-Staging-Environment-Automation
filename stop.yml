@@ -1,0 +1,10 @@
+---
+- name: Stop staging Docker container
+  hosts: staging
+  become: true
+
+  tasks:
+    - name: Stop staging-app container
+      community.docker.docker_container:
+        name: staging-app
+        state: stopped
